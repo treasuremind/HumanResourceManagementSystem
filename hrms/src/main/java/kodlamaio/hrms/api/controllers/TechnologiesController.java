@@ -6,7 +6,8 @@ import kodlamaio.hrms.business.abstracts.TechnologyService;
 import kodlamaio.hrms.core.utilities.results.DataResult;
 import kodlamaio.hrms.core.utilities.results.Result;
 import kodlamaio.hrms.entities.concretes.Technology;
-import kodlamaio.hrms.entities.dtos.TechnologyDto;
+import kodlamaio.hrms.entities.dtos.TechnologyAddDto;
+import kodlamaio.hrms.entities.dtos.TechnologyUpdateDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,6 +15,7 @@ import javax.validation.Valid;
 
 @RestController
 @RequestMapping("/api/technologies")
+@CrossOrigin
 public class TechnologiesController {
     private final TechnologyService technologyService;
 
@@ -28,7 +30,12 @@ public class TechnologiesController {
     }
 
     @PostMapping("/add")
-    public Result add(@Valid @RequestBody TechnologyDto technologyDto){
-        return this.technologyService.add(technologyDto);
+    public Result add(@Valid @RequestBody TechnologyAddDto technologyAddDto){
+        return this.technologyService.add(technologyAddDto);
+    }
+
+    @PutMapping("/update")
+    public Result update(@Valid @RequestBody TechnologyUpdateDto technologyUpdateDto){
+        return this.technologyService.update(technologyUpdateDto);
     }
 }

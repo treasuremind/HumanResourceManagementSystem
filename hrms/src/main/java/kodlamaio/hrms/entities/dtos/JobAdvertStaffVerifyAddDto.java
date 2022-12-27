@@ -10,14 +10,9 @@ import java.time.LocalDate;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class EducationDto {
+public class JobAdvertStaffVerifyAddDto {
     @JsonIgnore
     private int id;
-    private int resumeId;
-    private String schoolName;
-    private int graduateId;
-    private String schoolDepartment;
-    private LocalDate startedDate;
-    private LocalDate endedDate;
+    private int jobAdvertId;
     private LocalDate createdDate;
 }

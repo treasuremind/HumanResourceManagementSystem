@@ -13,6 +13,7 @@ import javax.validation.Valid;
 
 @RestController
 @RequestMapping("/api/graduates")
+@CrossOrigin
 public class GraduateController {
 
     private final GraduateService graduateService;
@@ -22,7 +23,7 @@ public class GraduateController {
         this.graduateService = graduateService;
     }
 
-    @PostMapping("/getall")
+    @GetMapping("/getall")
     public DataResult<List<Graduate>> getAll(){
         return this.graduateService.getAll();
     }

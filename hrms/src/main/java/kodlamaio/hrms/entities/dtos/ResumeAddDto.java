@@ -19,5 +19,5 @@ public class ResumeAddDto {
     private String photo;
     private String description;
     private LocalDate createdDate;
-    private LocalDate updateDate;
+    private LocalDate updatedDate;
 }
